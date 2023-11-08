@@ -14,6 +14,6 @@ while(random_num != num && --intentos > 0){
         window.alert("El número que buscas es mayor");
     }
     else if (intentos == 0){
-        window.alert("Te has quedado sin intentos")
+        window.alert("Te has quedado sin intentos");
     }
 }
