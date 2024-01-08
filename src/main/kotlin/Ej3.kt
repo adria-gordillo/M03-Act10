@@ -1,16 +1,32 @@
-package org.example
+import java.util.*
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+fun factorial_iterativo(numero:Int):Double {
+    var factorial:Double = 1.0
+    for (i in 1..numero) {
+        factorial *= i
+    }
+    return factorial
+}
+
+fun factorial1(numero:Int):Double {
+    val resultat:Double
+    if (numero <= 1) resultat = 1.0
+    else resultat = numero * factorial1(numero-1)
+    return resultat
+}
+
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    val Scanner = Scanner(System.`in`)
+    print("Introdueix el número del que cal buscar el factorial: ")
+    val numero: Int = scan.nextInt()
+    val resultado: Double = factorial1(numero)
+    println("El factorial de $numero és $resultado")
+}
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+fun main_2() {
+    for (i in 1..200)
+    {
+        val resultado :Double = factorial(i)
+        println("El factorial de $i és $resultado")
     }
 }
